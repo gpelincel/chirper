@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
 
 //Resource cria um grupo de rotas
 Route::resource('chirps', ChirpController::class)
-    ->only(['index', 'store']) //Rotas dentro do grupo, sendo index apenas "/"
+    ->only(['index', 'store', 'edit', 'update', 'destroy']) //Rotas dentro do grupo, sendo index apenas "/"
     ->middleware(['auth', 'verified']); //Middlewares para o controle das rotas, nesse caso autenticação de login e verificação de email
 
 require __DIR__ . '/auth.php';
